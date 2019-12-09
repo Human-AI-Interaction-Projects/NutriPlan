@@ -1,0 +1,108 @@
+<!-- ..............................................................................
+    index.html
+    Markup for index page of BakeOff2:
+    Written by: Daniel Fong, Mark Chen, Riyya Hari Iyer
+    Date Created: 10/15/2019
+    Last Modified: 12/02/2019
+     .............................................................................. --> 
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="/static/style.css">
+        <link rel="stylesheet" type="text/css" href="/static/nutrition-label/dist/css/nutritionLabel-adjust.css">
+
+        <!-- jQuery UI Documentation: https://api.jqueryui.com/ -->
+        <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+        <!-- Font Awesome Documentaiton: https://fontawesome.com/how-to-use/-->
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.11.2/css/all.css">
+        <!-- DataTables Documentation https://datatables.net/examples/api/ -->
+        <link rel="stylesheet" href="//cdn.datatables.net/1.10.20/css/jquery.dataTables.min.css">
+
+        <title>BakeOff #2 - Food Identification</title>
+    </head>
+    <body>
+        <header>
+            <div id="Food" class="tabcontent">
+                <h1>NutriPlan - An intelligent Nutrition Assistant</h1>
+            </div>
+        </header>
+
+        <nav>
+            <button id="Food-tab" class="tablink" onclick="changeTab('Food')">Identify Food</button>
+            <button id="History-tab" class="tablink" onclick="changeTab('History')">Meal History</button>
+            <button id="Track-tab" class="tablink" onclick="changeTab('Track')">Track Nutrition</button>
+            <button id="Preference-tab" class="tablink" onclick="changeTab('Preference')">Diet Preference</button>
+            <button id="Recipes-tab" class="tablink" onclick="changeTab('Recipes')">Recipes</button>
+        </nav>
+     
+        <div style="margin-top: 7.5vh"></div>   
+   
+     <!--
+        <div id="search-alert">
+                <strong>Danger!</strong> Indicates a dangerous or potentially negative action.
+                <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span> 
+        </div>
+    -->
+        <div style="margin-top: 2.5vh"></div>
+
+        <div class="search-container">
+            <input id="search-keyword" type="text" placeholder="Search"  style="text-transform:lowercase">
+            <button type="submit" id="index-search-icon"><i class="fa fa-search"></i></button>
+        </div>
+
+        <div id="history-wrapper">
+
+            <div class="food-result-container">
+               <h3>Search Result</h3>
+               <div id="result-container">
+                    <table id="result-table" class="display">
+                        <thead>
+                            <tr>
+                                <th>Name</th>
+                                <th>Serving Size[g]</th>
+                                <th>Calories[kcal]</th>
+                                <th>Carbohydrate[g]</th>
+                                <th>Protein[g]</th>
+                                <th>Fat[g]</th>
+                                <th>Action</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <div class="nutrition-label-container">
+                <h3>Add a Food to Food Log</h3>
+                <select id="meal-time">
+                        <option value="Breakfast">Breakfast</option>
+                        <option value="Lunch">Lunch</option>
+                        <option value="Dinner">Dinner</option>
+                </select>
+                <input type="text" id="datepicker" placeholder="date"> 
+                <button type="submit" id="food-add-icon"><i class="fa fa-plus"></i></button>
+                <div id="nutrition-facts"></div>
+            </div>
+        </div>
+
+
+        <div style="clear: both;"></div>
+        <div style="margin-top: 5vh"></div>
+
+        <!-- Online library -->
+        <script type="text/javascript" src="//code.jquery.com/jquery-3.4.1.min.js"></script>
+        <!-- jQuery UI Documentation: https://api.jqueryui.com/ -->
+        <script type="text/javascript" src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+        <!-- DataTables Documentation https://datatables.net/examples/api/ -->
+        <script src="//cdn.datatables.net/1.10.20/js/jquery.dataTables.min.js"></script>
+
+        <!-- Project-specific Library -->
+        <script type="text/javascript" src="/static/bakeoff2.main.js"></script>
+        <script type="text/javascript" src="/static/bakeoff2.index.js"></script>
+        <script type="text/javascript" src="/static/bakeoff2.ai.js"></script>
+        <script type="text/javascript" src="/static/nutrition-label/dist/js/nutritionLabel-min.js"></script>
+
+    </body>
+</html>

@@ -1,0 +1,188 @@
+<!-- ..............................................................................
+history.html
+Markup for history page of BakeOff2:
+Written by: Daniel Fong, Mark Chen, Riyya Hari Iyer
+Date Created: 10/15/2019
+Last Modified: 12/02/2019
+.............................................................................. -->	
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="/static/style.css">
+
+        <!-- jQuery UI Documentation: https://api.jqueryui.com/ -->
+        <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+        <!-- Font Awesome Documentaiton: https://fontawesome.com/how-to-use/-->
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.11.2/css/all.css">
+        <!-- DataTables Documentation https://datatables.net/examples/api/ -->
+        <link rel="stylesheet" href="//cdn.datatables.net/1.10.20/css/jquery.dataTables.min.css">
+        
+        <title>BakeOff #2 - Meal History</title>
+    </head>
+
+    <body>
+        <header>
+            <div id="History" class="tabcontent">
+                <h1>NutriPlan - An intelligent Nutrition Assistant</h1>
+            </div>
+        </header>
+
+        <nav>
+            <button id="Food-tab" class="tablink" onclick="changeTab('Food')">Identify Food</button>
+            <button id="History-tab" class="tablink" onclick="changeTab('History')">Meal History</button>
+            <button id="Track-tab" class="tablink" onclick="changeTab('Track')">Track Nutrition</button>
+            <button id="Preference-tab" class="tablink" onclick="changeTab('Preference')">Diet Preference</button>
+            <button id="Recipes-tab" class="tablink" onclick="changeTab('Recipes')">Recipes</button>
+        </nav>
+    
+        <div style="margin-top: 7.5vh"></div>   
+    
+        <!-- https://www.w3schools.com/howto/howto_js_alert.asp -->
+        <div id="history-alert">
+                <!-- <strong>Warning!</strong> Indicates a warning that might need attention.-->
+
+                Click AI-generated Labels to see AI Explanations on its decision!
+
+                <!-- <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span> -->
+        </div>
+
+        <div style="margin-top: 2.5vh"></div>
+
+ 
+
+        <div id="history-wrapper">
+            <div class="history-container">
+                <h3>Food Log + Evaluation</h3>
+                
+                <div class="search-container">
+                    <input type="text" id="datepicker" placeholder="date"> 
+                    <button type="submit" id="history-search-icon"><i class="fa fa-search"></i></button>
+                </div>
+                
+                <div id="Breakfast-container" class="meal-container">
+                    <h3>Breakfast</h3>
+                    <table id="table_breakfast" class="display">
+                        <thead>
+                            <tr>
+                                <th>Name</th>
+                                <th>Serving Size[g]</th>
+                                <th>Calories[kcal]</th>
+                                <th>Carbohydrate[g]</th>
+                                <th>Protein[g]</th>
+                                <th>Fat[g]</th>
+                                <th>AI Suggestion</th>
+                                <th>AI Evaluation</th>
+                                <th>Action</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                        </tbody>
+                    </table>
+                </div>
+                <div id="Lunch-container" class="meal-container">
+                    <h3>Lunch</h3>
+                    <table id="table_lunch" class="display">
+                        <thead>
+                            <tr>
+                                <th>Name</th>
+                                <th>Serving Size[g]</th>
+                                <th>Calories[kcal]</th>
+                                <th>Carbohydrate[g]</th>
+                                <th>Protein[g]</th>
+                                <th>Fat[g]</th>
+                                <th>AI Suggestion</th>
+                                <th>AI Evaluation</th>
+                                <th>Action</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                        </tbody>
+                    </table>
+                </div>
+                <div id="Dinner-container" class="meal-container">
+                    <h3>Dinner</h3>
+                    <table id="table_dinner" class="display">
+                        <thead>
+                            <tr>
+                                <th>Name</th>
+                                <th>Serving Size[g]</th>
+                                <th>Calories[kcal]</th>
+                                <th>Carbohydrate[g]</th>
+                                <th>Protein[g]</th>
+                                <th>Fat[g]</th>
+                                <th>AI Suggestion</th>
+                                <th>AI Evaluation</th>
+                                <th>Action</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <div class="cutoff-container">
+                <h3>Food Evaluation Criteria</h3>
+
+                <label>Max Allowed Calories [kcal]:</label>
+                <input id="cutoff-calories" type = "number" min="0" step=".01"> 
+
+                <br>
+                <label>Max Allowed Carbohydrates [g]:</label>
+                <input id="cutoff-carbohydrates" type = "number" min="0" step=".01">
+                
+                <br>
+                <label>Max Allowed Proteins [g]:</label>
+                <input id="cutoff-proteins" type = "number" min="0" step=".01">
+
+                <br>
+                <label>Max Allowed Fats [g]:</label>
+                <input id="cutoff-fats" type = "number" min="0" step=".01">
+
+                <br>
+                <label>Max Allowed Iron [mg]:</label>
+                <input id="cutoff-iron" type = "number" min="0" step=".01"> 
+
+                <br>
+                <label>Max Allowed Calcium [mg]:</label>
+                <input id="cutoff-calcium" type = "number" min="0" step=".01">
+
+                <br>
+                <label>Max Allowed Magnesium [mg]:</label>
+                <input id="cutoff-magnesium" type = "number" min="0" step=".01">
+
+                <br>
+                <label>Max Allowed Vitamin D [µg]:</label>
+                <input id="cutoff-vitaminD" type = "number" min="0" step=".01">
+                
+                <br>
+                <label>Max Allowed Vitamin B12 [µg]:</label>
+                <input id="cutoff-vitaminB12" type = "number" min="0" step=".01">
+
+                <br>
+                <br>
+                <button id="food-cutoff-button">Set Criteria</button>
+            </div>
+
+        </div>
+        
+        <div style="clear: both;"></div>
+        <div style="margin-top: 5vh"></div> 
+
+
+        <!-- Online library -->
+        <script type="text/javascript" src="//code.jquery.com/jquery-3.4.1.min.js"></script>
+        <!-- jQuery UI Documentation: https://api.jqueryui.com/ -->     
+        <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+        <!-- DataTables Documentation https://datatables.net/examples/api/ -->
+        <script src="//cdn.datatables.net/1.10.20/js/jquery.dataTables.min.js"></script>
+
+        
+        <!-- Project-specific Library -->
+        <script type="text/javascript" src="/static/bakeoff2.main.js"></script>
+        <script type="text/javascript" src="/static/bakeoff2.history.js"></script>
+        <script type="text/javascript" src="/static/bakeoff2.ai.js"></script>
+
+    </body>
+</html>

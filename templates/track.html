@@ -1,0 +1,145 @@
+<!-- ..............................................................................
+ track.html
+    Markup for track page of BakeOff2:
+    Written by: Daniel Fong, Mark Chen, Riyya Hari Iyer
+    Date Created: 10/15/2019
+    Last Modified: 12/03/2019
+     .............................................................................. --> 
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="/static/style.css">     
+        
+        <!-- jQuery UI Documentation: https://api.jqueryui.com/ -->
+        <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+        <!-- Font Awesome Documentaiton: https://fontawesome.com/how-to-use/-->
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.11.2/css/all.css">
+        <!-- DataTables Documentation https://datatables.net/examples/api/ -->
+        <link rel="stylesheet" href="//cdn.datatables.net/1.10.20/css/jquery.dataTables.min.css">
+           
+        <title>BakeOff #2 - Nutrition Report</title>
+    </head>
+
+    <body>
+        <header>
+            <div id="Track" class="tabcontent">
+                <h1>NutriPlan - An intelligent Nutrition Assistant</h1>
+            </div>
+        </header>
+        
+        <nav>
+            <button id="Food-tab" class="tablink" onclick="changeTab('Food')">Identify Food</button>
+            <button id="History-tab" class="tablink" onclick="changeTab('History')">Meal History</button>
+            <button id="Track-tab" class="tablink" onclick="changeTab('Track')">Track Nutrition</button>
+            <button id="Preference-tab" class="tablink" onclick="changeTab('Preference')">Diet Preference</button>
+            <button id="Recipes-tab" class="tablink" onclick="changeTab('Recipes')">Recipes</button>
+        </nav>
+
+        <div style="margin-top: 7.5vh"></div>   
+     
+        <div id="track-alert">
+                <!-- <strong>Success!</strong> Indicates a successful or positive action. -->
+
+                Click AI-generated Labels to see AI Explanations on its decision!
+                <!-- <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span> -->
+        </div>
+
+        <div style="margin-top: 2.5vh"></div>
+
+        <div id="track-wrapper">
+            
+            <div class="chart-container">
+                <h3>Nutrition Report</h3>
+                <div class="search-container">
+                    <select id="chart-type" onChange="makeNutritionChart()">
+                        <option value="Line Plot">Line Plot</option>
+                        <option value="Bar Graph">Bar Graph</option>
+                        <option value="Pie Chart">Pie Chart</option>
+                    </select>
+                    <input type="text" id="datepicker" placeholder="date"> 
+                    <button type="submit" id="track-search-icon"><i class="fa fa-search"></i></button>
+                </div> 
+
+                <br>
+                <div id="extra-food">
+                    Additional Foods from AI Food Suggestions:
+                </div>
+
+                <br>
+                <div id="nutrition-chart-container">
+                    <canvas id="nutrition-chart"></canvas>
+                </div>    
+            </div>
+
+            <div class="suggest-container">
+                <h3>Food Suggestion Criteria</h3>
+                <div>
+                    <select id="suggest-cutoff-conditions">
+                        <option value="high">High</option>
+                        <option value="low">Low</option>
+                    </select>
+                    <select id="suggest-cutoff-nutrients">
+                        <option value="carbohydrates">Carbohydrates [g]</option>
+                        <option value="proteins">Proteins [g]</option>
+                        <option value="fats">Fats [g]</option>
+                        <!-- <option value="iron">Iron [mg]</option>
+                        <option value="calcium">Calcium [mg]</option>
+                        <option value="magnesium">Magnesium [mg]</option>
+                        <option value="vitaminD">Vitamin D [µg]</option>
+                        <option value="vitaminB12">Vitamin B12 [µg]</option>
+                        <option value="sodium">Sodium [mg]</option> -->
+                    </select>
+
+
+                    <br>
+                    <br>
+                    <button id="food-suggest-cutoff-button">Set Criteria</button>
+                </div>
+                
+                <br>
+                
+                <h3>Food Suggestion</h3>
+                <div id="table-suggest-container">
+                    <table id="table-suggest" class="display">
+                            <thead>
+                                <tr>
+                                    <th>Name</th>
+                                    <th>Serving Size[g]</th>
+                                    <th>Calories[kcal]</th>
+                                    <th>Carbohydrate[g]</th>
+                                    <th>Protein[g]</th>
+                                    <th>Fat[g]</th>
+                                    <th>AI Suggestion</th>
+                                    <th>Action</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                            </tbody>
+                        </table>
+                </div>
+            </div>
+
+        </div>
+
+        <div style="clear: both;"></div>
+        <div style="margin-top: 1vh"></div>
+
+
+        <!-- Online library -->
+        <script type="text/javascript" src="//code.jquery.com/jquery-3.4.1.min.js"></script>
+        <!-- jQuery UI Documentation: https://api.jqueryui.com/ -->     
+        <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+        <!-- DataTables Documentation https://datatables.net/examples/api/ -->
+        <script src="//cdn.datatables.net/1.10.20/js/jquery.dataTables.min.js"></script>
+        <!-- https://www.chartjs.org/ -->
+        <script type="text/javascript" src="/static/chartjs/Chart.bundle.js"></script>
+        <script type="text/javascript" src="/static/chartjs/chartjs-plugin-annotation.js"></script>
+        
+        <!-- Project-specific Library -->
+        <script type="text/javascript" src="/static/bakeoff2.main.js"></script>
+        <script type="text/javascript" src="/static/bakeoff2.track.js"></script>
+        <script type="text/javascript" src="/static/bakeoff2.ai.js"></script>
+
+    </body>
+</html>

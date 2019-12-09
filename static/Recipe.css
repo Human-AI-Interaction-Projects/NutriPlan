@@ -1,0 +1,162 @@
+head {
+  background-color: lightgray; 
+  font-weight: normal;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+  background-color: lightgray; 
+  font-weight: normal;
+  font-family: Arial, Helvetica, sans-serif;
+  background-image: url('/static/assets/food-vector-pattern.jpg');
+  background-size: 400px;
+
+}
+
+.recipe-container {
+  width: 65%;
+  box-sizing: border-box; 
+  background-color: white;
+  border-radius: 6px;
+  border-style: solid;
+  border-color: wheat;
+  margin-left: 1.5vw;
+  margin-bottom: 1vh;
+  float:left; 
+  padding: 15px;
+}
+
+#vegan1 
+{
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  padding: 5px;
+  height:100px;
+  width: 150px;
+}
+#vegan2 
+{
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  padding: 5px;
+  height:100px;
+  width: 150px;
+}
+#vegan3 
+{
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  padding: 5px;
+  height:100px;
+  width: 150px;
+}
+#vegan4 
+{
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  padding: 5px;
+  height:150px;
+  width: 200px;
+}
+#vegan5 
+{
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  padding: 5px;
+  height:150px;
+  width: 200px;
+}
+#vegetarian1 
+{
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  padding: 5px;
+  height:150px;
+  width: 200px;
+}
+#vegetarian2 
+{
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  padding: 5px;
+  height:150px;
+  width: 200px;
+}
+#vegetarian3 
+{
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  padding: 5px;
+  height:150px;
+  width: 200px;
+}
+#vegetarian4 
+{
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  padding: 5px;
+  height:150px;
+  width: 200px;
+}
+#vegetarian5 
+{
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  padding: 5px;
+  height:150px;
+  width: 200px;
+}
+#non-vegetarian1 
+{
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  padding: 5px;
+  height:150px;
+  width: 200px;
+}
+#non-vegetarian2 
+{
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  padding: 5px;
+  height:150px;
+  width: 200px;
+}
+#non-vegetarian3 
+{
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  padding: 5px;
+  height:150px;
+  width: 200px;
+}
+#non-vegetarian4 
+{
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  padding: 5px;
+  height:150px;
+  width: 200px;
+}
+#non-vegetarian5 
+{
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  padding: 5px;
+  height:150px;
+  width: 200px;
+}
+
+
+button {
+  text-align: center;
+  font-size: 16px;
+  padding: 10px;
+  cursor: pointer;
+  min-width: 150px;
+  border: none;
+  background: lightgray;
+  margin: auto;
+  margin-bottom: 1vw;
+  display: inline-block;
+}

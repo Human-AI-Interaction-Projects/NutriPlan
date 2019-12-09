@@ -1,0 +1,624 @@
+/*	................................................................................
+ *  style.css
+ *	Style Sheet for BakeOff2:
+ *  Written by: Daniel Fong, Mark Chen, Riyya Hari Iyer
+ *  Date Created: 10/15/2019
+ *  Last Modified: 12/03/2019
+ *	................................................................................
+ */
+/* --- head CSS settings --- */
+head {
+  background-color: lightgray; 
+  font-weight: normal;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+/* --- body CSS settings --- */
+body {
+  background-color: lightgray; 
+  font-weight: normal;
+  font-family: Arial, Helvetica, sans-serif;
+  background-image: url('/static/assets/food-vector-pattern.jpg');
+  background-size: 400px;
+
+}
+
+/* --- Common html CSS settings --- */
+/* Web Header Tab */
+.tabcontent {
+  color: white;
+  display: none;
+  margin-bottom: 5px;
+  padding: 10px;
+  text-align: center;
+}
+
+#Food {background-image: linear-gradient(to bottom right, lightcoral, crimson)}
+#History {background-image: linear-gradient(to bottom right, gold, darkorange)}
+#Track {background-image:linear-gradient(to bottom right, turquoise, lightseagreen)}
+#Preference {background-image:linear-gradient(to bottom right, skyblue, dodgerblue)}
+#Recipes {background-image:linear-gradient(to bottom right, purple, rebeccapurple)}
+
+
+/* Web Navigation Tabs */
+.tablink {
+  background-color: #555555;
+  color: white;
+  float: left;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  padding: 15px;
+  font-size: 16px;
+  width: 20%;
+}
+.tablink:hover {
+  background-color: #777777;
+}
+
+/* Notification Box */
+/*
+#search-alert {
+  color: White;
+  text-align: center;
+  padding: 20px;
+  width: 50vw;
+  margin: auto;
+  margin-bottom: 0;
+  background-color: #f44336;
+}
+*/
+#history-alert {
+  color: black;
+  text-align: left;
+  padding: 20px;
+  width: 50vw;
+  margin: auto;
+  margin-bottom: 0;
+  background-color: white;
+  border-style: solid;
+  border-color: #ff9800;
+  border-width: thick
+}
+
+#track-alert {
+  color: black;
+  text-align: left;
+  padding: 20px;
+  width: 50vw;
+  margin: auto;
+  margin-bottom: 0;
+  background-color: white;
+  border-style: solid;
+  border-color: #4CAF50;
+  border-width: thick
+}
+
+/*
+#preference-alert {
+  color: White;
+  text-align: center;
+  padding: 20px;
+  width: 50vw;
+  margin: auto;
+  margin-bottom: 0;
+  background-color: #2196F3;
+}
+*/
+/* Table */
+td, th {
+  border: 1px solid #dddddd;
+  padding: 8px;
+}
+
+tr:nth-child(odd) {
+  background-color: white;
+}
+tr:nth-child(even) {
+  background-color: lightgray;
+}
+
+/* Search Box */
+.search-container {
+  text-align: center;
+  margin: auto;
+}
+.search-container input[type=text] {
+  font-size: 16px;
+  width: 50vw;
+  padding: 10px;
+  border: none;
+  box-shadow: inset 0px 0px 5px lightgray;
+}
+.search-container button {
+  font-size: 18px;
+  width: 5vw;
+  padding: 10px;
+  background: lightgray;
+  border: none;
+  cursor: pointer;
+}
+.search-container button:hover {
+  background: silver;
+}
+
+
+
+
+/* --- index.html CSS settings --- */
+#index-wrapper {
+  overflow: auto;
+}
+
+
+/* Food Results Board */
+.food-result-container {
+  text-align: center;
+  width: 65%;
+  min-height: 60vh;
+  box-sizing: border-box; 
+  background-color: white;
+  border-radius: 6px;
+  border-style: solid;
+  border-color: wheat;
+  margin-left: 1.5vw;
+  margin-bottom: 1vh;
+  float:left; 
+}
+#meal-time {
+  font-size: 16px;
+  width: 15vw;
+  padding: 10px;
+  margin: 10px 5px 20px 5px;
+  border: none;
+  box-shadow: inset 0px 0px 5px lightgray;
+  cursor: pointer;
+}
+ #datepicker {
+  font-size: 16px;
+  width: 20vw;
+  padding: 10px;
+  margin: 10px 10px 20px 5px;
+  border: none;
+  box-shadow: inset 0px 0px 5px lightgray;
+  cursor: pointer;
+}
+#food-add-icon {
+  font-size: 16px;
+  width: 5vw;
+  padding: 10px;
+  background: lightgray;
+  border: none;
+  cursor: pointer;
+}
+#food-add-icon:hover {
+  background: silver;
+}
+#result-container{
+  text-align: center;
+  width: 90%;
+  margin-left:auto; 
+  margin-right:auto;
+  margin-bottom: 1.5vh;
+  border-collapse: collapse;
+  overflow: auto;
+}
+
+
+/* Nutrition Label Board */
+.nutrition-label-container {
+  text-align: center;
+  width: 30%;
+  box-sizing: border-box; 
+  background-color: white;
+  border-radius: 6px;
+  border-style: solid;
+  border-color: wheat;
+  margin-bottom: 1vh;
+  margin-right: 1.5vw;
+  float:right; 
+}
+
+#nutrition-facts {
+  text-align: left;
+  padding: 10px;
+  width: 80%;
+  height: auto;
+  margin: auto;
+  display: block;
+}
+
+
+
+/* --- history.html CSS settings --- */
+#history-wrapper {
+  overflow: auto;
+}
+
+
+/* Food History Table */
+.history-container {
+  text-align: center;
+  width: 65%;
+  box-sizing: border-box; 
+  background-color: white;
+  border-radius: 6px;
+  border-style: solid;
+  border-color: wheat;
+  margin-left: 1.5vw;
+  margin-bottom: 1vh;
+  float:left; 
+}
+.history-container h3{
+  margin-bottom: 1vh;
+}
+.meal-container {
+  text-align: center;
+  width: 90%;
+  margin-left:auto; 
+  margin-right:auto;
+  margin-bottom: 1.5vh;
+  border-collapse: collapse;
+  overflow: auto;
+}
+
+
+/* Nutrient Cutoff Board */
+.cutoff-container {
+  text-align: left;
+  width: 30%;
+  box-sizing: border-box; 
+  background-color: white;
+  border-radius: 6px;
+  border-style: solid;
+  border-color: wheat;
+  margin-bottom: 1vh;
+  margin-right: 1.5vw;
+  float:right; 
+}
+.cutoff-container h3 {
+  text-align: center;
+}
+.cutoff-container label {
+  margin-bottom: 1vh;
+  margin-left: 1.5vw;
+}
+.cutoff-container input {
+  font-size: 16px;
+  width: 10vw;
+  min-width: 150px;
+  cursor: pointer;
+  padding: 10px;
+  border: none;
+  box-shadow: inset 0px 0px 5px lightgray;
+  margin-left: 0.5vw;
+  margin-bottom: 1vh;
+}
+.cutoff-container button {
+  text-align: center;
+  font-size: 16px;
+  padding: 10px;
+  cursor: pointer;
+  min-width: 150px;
+  border: none;
+  background: lightgray;
+  margin: auto;
+  margin-bottom: 1vw;
+  display: block;
+}
+
+
+
+
+
+
+/* --- track.html CSS settings --- */
+#chart-type {
+  font-size: 16px;
+  padding: 10px;
+  cursor: pointer;
+  width: 30vw;
+  border: none;
+  box-shadow: inset 0px 0px 5px lightgray;
+  margin-bottom: 10px;
+}
+
+#track-wrapper {
+  overflow: auto;
+}
+
+/* Nutrition Chart Board */
+.chart-container {
+  text-align: center;
+  width: 35%;
+  min-height: 60vh;
+  box-sizing: border-box; 
+  background-color: white;
+  border-radius: 6px;
+  border-style: solid;
+  border-color: wheat;
+  margin-left: 1.5vw;
+  margin-bottom: 1vw;
+  float:left; 
+}
+.chart-container h3 {
+  text-align: center;
+}
+.chart-container select, input {
+  font-size: 16px;
+  width: 10vw;
+  min-width: 100px;
+  cursor: pointer;
+  padding: 10px;
+  border: none;
+  box-shadow: inset 0px 0px 5px lightgray;
+  margin-left: 0.5vw;
+  margin-bottom: 1vw;
+}
+/* Responsive Charts:
+ * https://www.chartjs.org/docs/latest/general/responsive.html
+ */
+#nutrition-chart-container {
+  width: 90%;
+  height: 60vh;
+  margin: auto;
+  margin-bottom: 1vw;
+  display: block;
+}
+#nutrition-chart {
+  background-color: white;
+  border-radius: 6px;
+  border-style: solid;
+  border-color: silver;
+}
+
+#extra-food {
+  word-wrap: break-word;
+  overflow-y: scroll;
+  padding: 5px;
+  margin-top: 1vh;
+  margin-left: 5vw;
+  margin-right: 5vw;
+  margin-bottom: 1vh;
+}
+
+/* Food Suggestion Board */
+.suggest-container {
+  text-align: center;
+  width: 60%;
+  min-height: 60vh;
+  box-sizing: border-box; 
+  background-color: white;
+  border-radius: 6px;
+  border-style: solid;
+  border-color: wheat;
+  margin-bottom: 1vh;
+  margin-right: 1.5vw;
+  float:right; 
+}
+.suggest-container h3 {
+  text-align: center;
+}
+.suggest-container select, input {
+  font-size: 16px;
+  width: 12.5vw;
+  min-width: 150px;
+  cursor: pointer;
+  padding: 10px;
+  border: none;
+  box-shadow: inset 0px 0px 5px lightgray;
+  margin-left: 0.5vw;
+  margin-bottom: 1vh;
+}
+.suggest-container button {
+  text-align: center;
+  font-size: 16px;
+  padding: 10px;
+  cursor: pointer;
+  min-width: 150px;
+  border: none;
+  background: lightgray;
+  margin: auto;
+  margin-bottom: 1vw;
+  display: inline-block;
+}
+#table-suggest-container {
+  text-align: center;
+  width: 90%;
+  margin-left:auto; 
+  margin-right:auto;
+  margin-bottom: 1.5vh;
+  border-collapse: collapse;
+  overflow: auto;
+}
+
+#table-suggest {
+  text-align: center;
+  border-collapse: collapse;
+  overflow: auto;
+}
+
+
+
+
+
+/* --- preference.html CSS settings --- */
+#preference-wrapper {
+  overflow: auto;
+}
+
+/* Body Info Board */
+.userInfo-container {
+  text-align: left;
+  width: 30%;
+  min-height: 60vh;
+  box-sizing: border-box; 
+  background-color: white;
+  border-radius: 6px;
+  border-style: solid;
+  border-color: wheat;
+  margin-left: 1.5vw;
+  margin-bottom: 1vw;
+  margin-right: 1.5vw;
+  float:left; 
+}
+.userInfo-container h3 {
+  text-align: center;
+}
+.userInfo-container label {
+  margin-left: 1.5vw;
+  margin-bottom: 1vw;
+}
+.userInfo-container select, input {
+  font-size: 16px;
+  width: 10vw;
+  min-width: 100px;
+  cursor: pointer;
+  padding: 10px;
+  border: none;
+  box-shadow: inset 0px 0px 5px lightgray;
+  margin-left: 0.5vw;
+  margin-bottom: 1vw;
+}
+.userInfo-container button {
+  text-align: center;
+  font-size: 16px;
+  padding: 10px;
+  cursor: pointer;
+  width: 200px;
+  border: none;
+  background: lightgray;
+  margin: auto;
+  margin-bottom: 1vw;
+  display: block;
+}
+
+/* Daily Reference Intake Board */
+.plan-container {
+  text-align: left;
+  width: 30%;
+  min-height: 60vh;
+  box-sizing: border-box; 
+  background-color: white;
+  border-radius: 6px;
+  border-style: solid;
+  border-color: wheat; 
+  margin-left: 1.5vw;
+  margin-bottom: 1vw;
+  margin-right: 1.5vw;
+  display: inline-block;
+}
+.plan-container h3 {
+  text-align: center;
+}
+.plan-container label {
+  margin-bottom: 1vw;
+  margin-left: 1.5vw;
+}
+.plan-container input {
+  font-size: 16px;
+  width: 10vw;
+  min-width: 100px;
+  cursor: pointer;
+  padding: 10px;
+  border: none;
+  box-shadow: inset 0px 0px 5px lightgray;
+  margin-left: 0.5vw;
+  margin-bottom: 1vw;
+}
+.plan-container button {
+  text-align: center;
+  font-size: 16px;
+  padding: 10px;
+  cursor: pointer;
+  width: 200px;
+  border: none;
+  background: lightgray;
+  margin: auto;
+  margin-bottom: 1vw;
+  display: block;
+}
+
+
+/* All Cutoffs Board */
+.pref-cutoff-container {
+  text-align: left;
+  width: 30%;
+  min-height: 60vh;
+  box-sizing: border-box; 
+  background-color: white;
+  border-radius: 6px;
+  border-style: solid;
+  border-color: wheat;
+  margin-bottom: 1vh;
+  margin-right: 1.5vw;
+  float:right; 
+}
+.pref-cutoff-container h3 {
+  text-align: center;
+}
+.pref-cutoff-container label {
+  margin-bottom: 1vh;
+  margin-left: 1.5vw;
+}
+.pref-cutoff-container input {
+  font-size: 16px;
+  min-width: 150px;
+  cursor: pointer;
+  padding: 10px;
+  border: none;
+  box-shadow: inset 0px 0px 5px lightgray;
+  margin-left: 0.5vw;
+  margin-bottom: 1vh;
+}
+#suggest-cutoff-conditions {
+  font-size: 16px;
+  width: 12.5vw;
+  min-width: 150px;
+  cursor: pointer;
+  padding: 10px;
+  border: none;
+  box-shadow: inset 0px 0px 5px lightgray;
+  margin-left: 0.5vw;
+  margin-bottom: 1vh;
+  display: inline-block;
+}
+
+
+#suggest-cutoff-nutrients {
+  font-size: 16px;
+  width: 12.5vw;
+  min-width: 150px;
+  cursor: pointer;
+  padding: 10px;
+  border: none;
+  box-shadow: inset 0px 0px 5px lightgray;
+  margin-left: 0.5vw;
+  margin-bottom: 1vh;
+  display: inline-block;
+}
+
+.pref-cutoff-container button {
+  text-align: center;
+  font-size: 16px;
+  padding: 10px;
+  cursor: pointer;
+  width: 150px;
+  border: none;
+  background: lightgray;
+  margin: auto;
+  margin-bottom: 1vh;
+  display: block;
+}
+#diet-plan-save-button {
+  text-align: center;
+  font-size: 16px;
+  padding: 10px;
+  cursor: pointer;
+  width: 200px;
+  border: none;
+  background: lightgray;
+  margin: auto;
+  margin-bottom: 1vw;
+  display: block;
+}

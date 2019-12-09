@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title> Recipes </title>
+	 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="/static/style.css">
+        <link rel="stylesheet" type="text/css" href="/static/Recipe.css">
+
+        <!-- jQuery UI Documentation: https://api.jqueryui.com/ -->
+        <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+        <!-- Font Awesome Documentaiton: https://fontawesome.com/how-to-use/-->
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.11.2/css/all.css">
+
+        <title>BakeOff #2 - Food Identification</title>
+</head>
+<body>
+        <header>
+            <div id="Recipes" class="tabcontent">
+                <h1>NutriPlan - An intelligent Nutrition Assistant</h1>
+            </div>
+        </header>
+        <nav>
+            <button id="Food-tab" class="tablink" onclick="changeTab('Food')">Identify Food</button>
+            <button id="History-tab" class="tablink" onclick="changeTab('History')">Meal History</button>
+            <button id="Track-tab" class="tablink" onclick="changeTab('Track')">Track Nutrition</button>
+            <button id="Preference-tab" class="tablink" onclick="changeTab('Preference')">Diet Preference</button>
+            <button id="Recipes-tab" class="tablink" onclick="changeTab('Recipes')">Recipes</button>
+        </nav>
+     
+        <div style="margin-top: 7.5vh"></div>   
+     
+        <div style="margin-top: 2.5vh"></div>
+
+	<div class="search-container">
+                <!--<select id="Recipe-type" onChange="makeNutritionChart()">
+                    <option value="Vegan">Vegan</option>
+                    <option value="Vegetarian">Vegetarian</option>
+                    <option value="Non-Vegetarian">Non-Vegetarian</option>
+                </select>
+                <button type="submit" id="track-search-icon"><i class="fa fa-search"></i></button>-->
+                <button class = "a" onclick="myFunction1()">Vegan</button>
+	            <button class = "b" onclick="myFunction2()">Vegetarian</button>
+	            <button class = "c" onclick="myFunction3()">Non Vegetarian</button>
+    </div> 
+     
+	<nav>
+		<div id = "Vegan">
+		  		<h3> Vegan Recipes</h3>
+		  		<br>
+		  		<br>
+		  		<div class = "recipe-container">
+	  			<h4> Grain Salad with Pickled Onions and Herbs </h4>
+	  			<img src="/static/assets/vegan1.jpg" id="vegan1">
+	  				<p> Freekeh is green wheat with a slightly smoky flavor we love, but any whole grain you have on hand will work. This recipe from Dimes is part of Healthyish Superpowered, a dinner series honoring female activists and chefs across the country, in partnership with Caviar. </p>
+	  				<a target = "_blank" href = "https://www.bonappetit.com/recipe/grain-salad-with-pickled-onions-and-herbs"> View recipe </a>
+	  				</div>
+	  			<br>
+	  			<br>
+	  			<div class = "recipe-container">
+	  			<h4> Rice Noodles al Pomodoro with Chili Oil </h4>
+	  			<img src="/static/assets/vegan2.jpg" id="vegan2">
+	  				<p> Chili oil and rice noodles completely upend the typical Italian flavor profile here. We’ve got bursting, jammy cherry tomatoes that make their own sauce, rice noodles that cook in a flash, and a weeknight dinner that tastes like it took a lot longer than 20 minutes.</p>
+	                <a target = "_blank" href = "https://www.bonappetit.com/recipe/rice-noodles-al-pomodoro-with-chili-oil"> View recipe </a>
+	            </div>
+	            <br>
+	            <br>
+	            <div class = "recipe-container">
+	                <h4> Quick quinoa and black bean vegan chilli </h4>
+	                <img src="/static/assets/vegan3.jpg" id="vegan3">
+	  				<p> Try this quick and easy vegan chilli. This quinoa and black bean chilli recipe is high in protein, low calorie and vegan – but still tastes impossibly creamy </p>
+	  				<a target = "_blank" href = "https://www.olivemagazine.com/recipes/vegan/quick-quinoa-and-black-bean-chilli/"> View recipe </a>
+	  			</div>
+	  			<br>
+	  			<br>
+	  			<div class = "recipe-container">
+	  			<h4> Vegan bolognese </h4>
+	  			<img src="/static/assets/vegan4.jpg" id="vegan4">
+	  				<p> Make your bolognese meat-free with a rich ragu of dried porcini and chestnut mushrooms, and plenty of vegetables for a low-fat, vegan meal.</p>
+	  				<a target = "_blank" href = "https://www.olivemagazine.com/recipes/vegan/mushroom-bolognese/"> View recipe </a>
+	  			</div>
+	            <br>
+	            <br>
+	            <div class = "recipe-container">
+	            <h4> Mexican salad tortilla bowls </h4>
+	            <img src="/static/assets/vegan5.jpg" id="vegan5">
+	  				<p> Check out these vibrant vegan Mexican salad bowls. This quick and easy recipe is super fresh and has just the right amount of spice and zing - ready in 20 minutes</p>
+	  				<a target = "_blank" href = "https://www.olivemagazine.com/recipes/vegan/mexican-salad-tortilla-bowls/"> View recipe </a>
+	  			</div>
+	            <br>
+	            <br>
+	    </div>
+	    <div id = "Vegetarian">
+	  		<h3> Vegetarian Recipes </h3>
+	  		<br>
+	  		<br>
+	  			<div class = "recipe-container">
+	  			<h4> Low-calorie spiced cauliflower soup </h4>
+	  			<img src="/static/assets/veg1.jpg" id="vegetarian1">
+	  				<p> Creamy cauliflower soup that is spiced with curry powder for a low-calorie veggie winter warmer and gets ready under 1 hour </p>
+	  				<a target = "_blank" href = "https://www.olivemagazine.com/recipes/vegetarian/spiced-cauliflower-soup/"> View recipe </a>
+	  			</div>
+	  			<br>
+	  			<br>
+	  			<div class = "recipe-container">
+	  			<h4> Mushroom chilli with lime soured cream </h4>
+	  			<img src="/static/assets/veg2.jpg" id="vegetarian2">
+	  				<p> This is a simple healthy twist on a family classic, chilli con carne. This version is not only vegetarian, it's low in calories and gluten free too, a great midweek meal</p>
+	  				<a target = "_blank" href = "https://www.olivemagazine.com/recipes/vegetarian/mushroom-chilli-with-lime-soured-cream/"> View recipe </a>
+	  			</div>
+	            <br>
+	            <br>
+	            <div class = "recipe-container">
+	            <h4> Turkish ratatouille with yogurt sauce </h4>
+	                <img src="/static/assets/veg3.jpg" id="vegetarian3">
+	  				<p> Try this quick recipe for Turkish ratatouille with yogurt sauce. This dish is quick, easy and simple to make, a great low fat vegetarian midweek meal </p>
+	  				<a target = "_blank" href = "https://www.olivemagazine.com/recipes/vegetarian/turkish-ratatouille-with-yogurt-sauce/"> View recipe </a>
+	  			</div>
+	  			<br>
+	  			<br>
+	  			<div class = "recipe-container">
+	  			<h4> Chickpea Salad </h4>
+	  			<img src="/static/assets/veg4.jpg" id="vegetarian4">
+	  				<p> Check out this crunchy vegetarian salad with chickpeas, it's packed with fresh and tangy flavours and is low in calories, too. This recipe comes from chef Dhruv Mittal at DUM Biryani House in London. Vegan and gluten free, this dish takes under 30 minute to prepare.</p>
+	  				<a target = "_blank" href = "https://www.olivemagazine.com/recipes/vegan/black-chickpea-salad-kala-channa-masala/"> View recipe </a>
+	  			</div>
+	            <br>
+	            <br>
+	            <div class = "recipe-container">
+	            <h4> Vegetarian spinach and ricotta filo pie </h4>
+	            <img src="/static/assets/veg5.jpg" id="vegetarian5">
+	  				<p> Check out these vibrant vegan Mexican salad bowls. This quick and easy recipe is super fresh and has just the right amount of spice and zing - ready in 20 minutes</p>
+	  				<a target = "_blank" href = "https://www.olivemagazine.com/recipes/healthy/spinach-and-ricotta-filo-pie/"> View recipe </a>
+	  			</div>
+	            <br>
+	            <br>
+	    </div>
+	    <div id = "Non Vegetarian">
+	  		<h3> Non-Vegetarian Recipes </h3> 
+	  		<br>
+	  		<br>
+	  			<div class = "recipe-container">
+	  			<h4> Goan Style Chicken Vindaloo With Vegetables </h4>
+	  			<img src="/static/assets/non1.jpg" id="non-vegetarian1">
+	  				<p> Chicken Vindaloo is a delicious curry from the Goan cuisine that has a perfect blend of spices and is made more nutritious with the addition of vegetables and oats. </p>
+	  				<a target = "_blank" href = "https://www.fitfoodie.in/recipe/goan-style-chicken-vindaloo-vegetables"> View recipe </a>
+	  			</div>
+	  			<br>
+	  			<br>
+	  			<div class = "recipe-container">
+	  			<h4> Kerala Chicken Curry </h4>
+	  			<img src="/static/assets/non2.jpg" id="non-vegetarian2">
+	  				<p> Kerala Chicken Curry has a delectable taste and aroma from the spices and curry leaves. The addition of coconut oil and the curry leaves along with the kerala spices brings out the flavors of this dish. </p>
+	  				<a target = "_blank" href = "https://www.fitfoodie.in/recipe/kerala-chicken-curry-recipe"> View recipe </a>
+	  			</div>
+	            <br>
+	            <br>
+	            <div class = "recipe-container">
+	            <h4> Healthy Chicken Biryani </h4>
+	                <img src="/static/assets/non3.jpg" id="non-vegetarian3">
+	  				<p> Low in fat & with a high fibre content, this chicken biryani recipe will have your taste buds pampered to the fullest while keeping you in the best of your health. Let’s prepare and relish it! </p>
+	  				<a target = "_blank" href = "https://www.fitfoodie.in/recipe/healthy-chicken-biryani"> View recipe </a>
+	  			</div>
+	  			<br>
+	  			<br>
+	  			<div class = "recipe-container">
+	  			<h4> Healthy Beef and Broccoli </h4>
+	  			<img src="/static/assets/non4.jpg" id="non-vegetarian4">
+	  				<p> Try this recipe with beef and broccoli that is absolutely healthy.You can also have steamed rice. </p>
+	  				<a target = "_blank" href = "https://www.asweetpeachef.com/healthy-beef-and-broccoli-recipe/"> View recipe </a>
+	  			</div>
+	            <br>
+	            <br>
+	            <div class = "recipe-container">
+	            <h4> Herb-roasted Turkey </h4>
+	            <img src="/static/assets/non5.jpg" id="non-vegetarian5">
+	  				<p> This easy method produces all the good looks and moist flavor you dream of in an oven-roasted turkey. Make sure you show this beauty off at the table before you carve it. Garnish your serving platter with fresh herb sprigs and citrus wedges </p>
+	  				<a target = "_blank" href = "http://www.eatingwell.com/recipe/249300/herb-roasted-turkey/"> View recipe </a>
+	  			</div>
+	            <br>
+	            <br>
+        </div>
+    </nav>
+     <div style="clear: both;"></div>
+        <div style="margin-top: 5vh"></div>
+
+        <!-- Online library -->
+        <script type="text/javascript" src="//code.jquery.com/jquery-3.4.1.min.js"></script>
+        <!-- jQuery UI Documentation: https://api.jqueryui.com/ -->
+        <script type="text/javascript" src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+        <!-- DataTables Documentation https://datatables.net/examples/api/ -->
+        <script src="//cdn.datatables.net/1.10.20/js/jquery.dataTables.min.js"></script>
+
+        <!-- Project-specific Library -->
+        <script type="text/javascript" src="/static/bakeoff2.main.js"></script>
+        <script type="text/javascript" src="/static/Recipe.js"></script>
+
+</body>
+</html>
